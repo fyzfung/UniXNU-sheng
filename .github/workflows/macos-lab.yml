@@ -149,6 +149,7 @@ jobs:
           ./unixnu fetch --os macos-27
           mkdir -p ../device/drivers/Ath12kWifi/deps/freebsd
           git -C ../device/drivers/Ath12kWifi/deps/freebsd init -q
+          git -C ../device/drivers/Ath12kWifi/deps/freebsd sparse-checkout init --cone
           git -C ../device/drivers/Ath12kWifi/deps/freebsd fetch -q --depth 1 https://github.com/freebsd/freebsd-src.git 95719d8a895bf8170851e9844d9b4092b1d2b6fe
           git -C ../device/drivers/Ath12kWifi/deps/freebsd checkout -q FETCH_HEAD
           if [ '${{ inputs.root_storage }}' = true ]; then
